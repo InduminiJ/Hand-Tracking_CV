@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-import HandTrackingModule as htm
+import HT_Module as htm
 
 def good(lmList):
     flag = False
@@ -27,19 +27,16 @@ def main():
     detector = htm.handDetector()
 
     while True:
-        success, img = cap.read()
+        success, img = cap.read() 
         c = detector.findHands(img)
         lmList = detector.findPosition(img)
 
         isGood = good(lmList)
         isBad = bad(lmList)
 
-        if(isGood):
-            col = (124,252,0)
-        elif(isBad):
-            col = (128,0,128)
-        else:
-            col = (0,0,0)
+        if(isGood): col = (124,252,0)
+        elif(isBad): col = (0,0,255)
+        else: col = (0,0,0)
 
         blk = np.zeros(img.shape, np.uint8)
         cv2.rectangle(blk, (0, 0), (2000,840), col, cv2.FILLED)
