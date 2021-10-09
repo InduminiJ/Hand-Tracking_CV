@@ -45,8 +45,10 @@ def main():
 
         cv2.imshow("Image", out) if (isGood or isBad) else cv2.imshow("Image", img)
 
-        cv2.waitKey(1)
+        if cv2.waitKey(20) & 0xFF == ord('q'):
+            break
 
+    cv2.destroyAllWindows()
 
 main()
 
