@@ -10,7 +10,7 @@ Needs `python`, `opencv`, `numpy`, `mediapipe`
 `$ pip install mediapipe`
 
 ## Installation/Usage
-cd into the Hand-Tracking directory:
+Clone the github repository and cd into the Hand-Tracking directory:
 
 `$ cd /Path/to/Hand-Tracking`
 
